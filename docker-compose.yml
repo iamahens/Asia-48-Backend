@@ -28,6 +28,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      command: ["./wait-for-it.sh", "mysql:3306", "--", "java", "-jar", "app.jar"]
     container_name: asia48-backend
     restart: unless-stopped
     ports:
